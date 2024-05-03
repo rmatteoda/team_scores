@@ -24,7 +24,7 @@ defmodule TeamScores do
     end)
   end
 
-  @spec aggregate_score(TradingCard.t(), String.t(), integer) :: integer
+  @spec aggregate_score(trading_card, String.t(), integer) :: integer
   defp aggregate_score(%{team: team} = team_card, team_score, team_name)
        when team == team_name do
     team_score + Map.get(team_card, :score, 0)
